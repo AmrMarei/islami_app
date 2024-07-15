@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/app_colors.dart';
 import 'package:islami_app/home/quran/item_sura.dart';
 
@@ -250,8 +251,8 @@ class QuranTab extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    ' عدد الأيات',
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    AppLocalizations.of(context)!.number_of_verses,
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ],
               ),
@@ -260,8 +261,8 @@ class QuranTab extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'اسم السورة',
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    AppLocalizations.of(context)!.sura_name,
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ],
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/app_colors.dart';
 
 class SebhaTab extends StatefulWidget {
@@ -9,15 +10,16 @@ class SebhaTab extends StatefulWidget {
 class _SebhaTabState extends State<SebhaTab> {
   int counter = 0;
   double rotationAngle = 0.0;
-  List<String> phrases = [
-    'سبحان الله',
-    'الحمد لله',
-    'لا إله إلا الله',
-    'الله أكبر'
-  ];
 
   @override
   Widget build(BuildContext context) {
+    List<String> phrases = [
+      AppLocalizations.of(context)!.subhan_allah,
+      AppLocalizations.of(context)!.alhamdulillah,
+      AppLocalizations.of(context)!.la_ilaha_illallah,
+      AppLocalizations.of(context)!.allahu_Akbar,
+    ];
+
     return Column(
       children: [
         GestureDetector(
@@ -28,7 +30,7 @@ class _SebhaTabState extends State<SebhaTab> {
           ),
         ),
         Text(
-          'عدد التسبيحات',
+          AppLocalizations.of(context)!.number_of_praises,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
@@ -58,7 +60,7 @@ class _SebhaTabState extends State<SebhaTab> {
             borderRadius: BorderRadius.circular(15.0),
           ),
           child: Text(
-            getCurrentPhrase(),
+            getCurrentPhrase(phrases),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 24.0,
@@ -68,7 +70,7 @@ class _SebhaTabState extends State<SebhaTab> {
         ),
         ElevatedButton(
           onPressed: resetTasbeeh,
-          child: Text('إعادة تعيين'),
+          child: Text(AppLocalizations.of(context)!.reset),
           style: ElevatedButton.styleFrom(
             textStyle: Theme.of(context).textTheme.titleLarge,
             primary: AppColors.primaryLightColor,
@@ -86,7 +88,7 @@ class _SebhaTabState extends State<SebhaTab> {
     });
   }
 
-  String getCurrentPhrase() {
+  String getCurrentPhrase(List<String> phrases) {
     int phraseIndex = (counter ~/ 33) % phrases.length;
     return phrases[phraseIndex];
   }
