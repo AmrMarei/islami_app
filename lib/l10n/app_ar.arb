@@ -13,5 +13,9 @@
  "allahu_Akbar" : "الله أكبر",
  "number_of_praises" : "عدد التسبيحات",
  "reset" : "إعادة تعيين" ,
- "quran_Radio" : "اذاعه القران الكريم"
+ "quran_Radio" : "اذاعه القران الكريم",
+ "setting" : "الاعدادات",
+ "language" : "اللغه",
+  "arabic" : "العربية",
+  "english" : "الانجليزيه"
  }

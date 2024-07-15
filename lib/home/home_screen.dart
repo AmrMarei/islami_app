@@ -4,6 +4,7 @@ import 'package:islami_app/home/hadeth/hadeth_tab.dart';
 import 'package:islami_app/home/quran/quran_tab.dart';
 import 'package:islami_app/home/radio/radio_tab.dart';
 import 'package:islami_app/home/sebha/sebha_tab.dart';
+import 'package:islami_app/home/setting/setting_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routName = 'home_screen';
@@ -59,6 +60,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon:
                           ImageIcon(AssetImage('assets/image/icon_quran.png')),
                       label: AppLocalizations.of(context)!.quran),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.settings),
+                      label: AppLocalizations.of(context)!.setting),
                 ]),
           ),
           body: tabs[selectedIndex],
@@ -72,5 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
     SebhaTab(),
     HadethTab(),
     QuranTab(),
+    SettingTab(),
   ];
 }
