@@ -13,5 +13,9 @@
  "allahu_Akbar" : "Allahu Akbar",
  "number_of_praises" : "Number of praises",
  "reset" : "Reset" ,
- "quran_Radio" : "Quran Radio"
- }
+ "quran_Radio" : "Quran Radio",
+ "setting" : "Settings",
+ "language" : "Language",
+ "arabic" : "Arabic",
+ "english" : "English"
+  }
