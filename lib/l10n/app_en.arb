@@ -1,0 +1,17 @@
+{
+ "app_title" : "Islami",
+ "sura_name" : "Sura Name",
+ "number_of_verses" : "Number of verses",
+ "quran" : "Quran",
+ "hadeith" : "Hadeth",
+ "sebha" : "Rosary",
+ "radio":"Radio",
+ "hadeth_name":"Hadeth name",
+ "subhan_allah" : "Subhan Allah",
+ "alhamdulillah" : "Alhamdulillah",
+ "la_ilaha_illallah" : "La ilaha illallah",
+ "allahu_Akbar" : "Allahu Akbar",
+ "number_of_praises" : "Number of praises",
+ "reset" : "Reset" ,
+ "quran_Radio" : "Quran Radio"
+ }

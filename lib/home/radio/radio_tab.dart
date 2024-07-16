@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioTab extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class RadioTab extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'اذاعه القرأن الكريم',
+                AppLocalizations.of(context)!.quran_Radio,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
