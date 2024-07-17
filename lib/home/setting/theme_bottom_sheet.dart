@@ -4,13 +4,14 @@ import 'package:islami_app/app_colors.dart';
 import 'package:islami_app/provider/app_config_provider.dart';
 import 'package:provider/provider.dart';
 
-class LanguageBottomSheet extends StatefulWidget {
+class ThemeBottomSheet extends StatefulWidget {
   @override
-  State<LanguageBottomSheet> createState() => _LanguageBottomSheetState();
+  State<ThemeBottomSheet> createState() => _ThemeBottomSheetState();
 }
 
-class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
+class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   late AppConfigProvider provider;
+
   @override
   Widget build(BuildContext context) {
     provider = Provider.of<AppConfigProvider>(context);
@@ -21,23 +22,22 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
         children: [
           InkWell(
             onTap: () {
-              provider.changeLanguage('en');
+              provider.changeTheme(ThemeMode.dark);
             },
-            child: provider.appLanguage == 'en'
-                ? getSelectedItemWidget(AppLocalizations.of(context)!.english)
-                : getUnSelectedItemWidget(
-                    AppLocalizations.of(context)!.english),
+            child: provider.isDarkMode()
+                ? getSelectedItemWidget(AppLocalizations.of(context)!.dark)
+                : getUnSelectedItemWidget(AppLocalizations.of(context)!.dark),
           ),
           SizedBox(
             height: 15,
           ),
           InkWell(
             onTap: () {
-              provider.changeLanguage('ar');
+              provider.changeTheme(ThemeMode.light);
             },
-            child: provider.appLanguage == 'ar'
-                ? getSelectedItemWidget(AppLocalizations.of(context)!.arabic)
-                : getUnSelectedItemWidget(AppLocalizations.of(context)!.arabic),
+            child: provider.isDarkMode()
+                ? getUnSelectedItemWidget(AppLocalizations.of(context)!.light)
+                : getSelectedItemWidget(AppLocalizations.of(context)!.light),
           ),
         ],
       ),
@@ -50,9 +50,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
       children: [
         Text(
           text,
-          style: Theme.of(context)
-              .textTheme
-              .bodyMedium!.copyWith(
+          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
               color: provider.isDarkMode()
                   ? AppColors.yellowColor
                   : AppColors.witheColor),

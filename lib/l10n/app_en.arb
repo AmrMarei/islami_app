@@ -17,5 +17,8 @@
  "setting" : "Settings",
  "language" : "Language",
  "arabic" : "Arabic",
- "english" : "English"
+ "english" : "English",
+ "theme" : "Theme",
+  "light" : "Light",
+  "dark" : "Dark"
   }

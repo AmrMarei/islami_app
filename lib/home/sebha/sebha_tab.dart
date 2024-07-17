@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/app_colors.dart';
+import 'package:islami_app/provider/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
   @override
@@ -13,6 +15,7 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     List<String> phrases = [
       AppLocalizations.of(context)!.subhan_allah,
       AppLocalizations.of(context)!.alhamdulillah,
@@ -26,7 +29,9 @@ class _SebhaTabState extends State<SebhaTab> {
           onTap: incrementCounter,
           child: Transform.rotate(
             angle: rotationAngle,
-            child: Image.asset('assets/image/sebha_logo.png'),
+            child: provider.isDarkMode()
+                ? Image.asset('assets/image/sebha_dark.png')
+                : Image.asset('assets/image/sebha_logo.png'),
           ),
         ),
         Text(
@@ -39,7 +44,9 @@ class _SebhaTabState extends State<SebhaTab> {
           padding: EdgeInsets.all(10.0),
           margin: EdgeInsets.symmetric(horizontal: 160.0, vertical: 10),
           decoration: BoxDecoration(
-            color: AppColors.primaryLightColor,
+            color: provider.isDarkMode()
+                ? AppColors.yellowColor
+                : AppColors.primaryLightColor,
             borderRadius: BorderRadius.circular(15.0),
           ),
           child: Text(
@@ -56,7 +63,9 @@ class _SebhaTabState extends State<SebhaTab> {
           padding: EdgeInsets.all(10.0),
           margin: EdgeInsets.symmetric(horizontal: 110.0, vertical: 60),
           decoration: BoxDecoration(
-            color: AppColors.primaryLightColor,
+            color: provider.isDarkMode()
+                ? AppColors.yellowColor
+                : AppColors.primaryLightColor,
             borderRadius: BorderRadius.circular(15.0),
           ),
           child: Text(
@@ -73,7 +82,9 @@ class _SebhaTabState extends State<SebhaTab> {
           child: Text(AppLocalizations.of(context)!.reset),
           style: ElevatedButton.styleFrom(
             textStyle: Theme.of(context).textTheme.titleLarge,
-            primary: AppColors.primaryLightColor,
+            primary: provider.isDarkMode()
+                ? AppColors.yellowColor
+                : AppColors.primaryLightColor,
             onPrimary: AppColors.blackColor,
           ),
         ),

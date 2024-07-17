@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routName,
       theme: MyThemeData.lightMode,
+      darkTheme: MyThemeData.darkMode,
+      themeMode: provider.appTheme,
       routes: {
         HomeScreen.routName: (context) => HomeScreen(),
         SuraDetail.routName: (context) => SuraDetail(),

@@ -5,6 +5,8 @@ import 'package:islami_app/home/quran/quran_tab.dart';
 import 'package:islami_app/home/radio/radio_tab.dart';
 import 'package:islami_app/home/sebha/sebha_tab.dart';
 import 'package:islami_app/home/setting/setting_tab.dart';
+import 'package:islami_app/provider/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routName = 'home_screen';
@@ -18,10 +20,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return Stack(
       children: [
-        Image.asset(
-          'assets/image/main_background.png',
+        provider.isDarkMode()
+            ? Image.asset(
+                'assets/image/background_dark.png',
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.fill,
+              )
+            : Image.asset(
+                'assets/image/main_background.png',
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,
