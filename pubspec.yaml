@@ -44,6 +44,7 @@ dev_dependencies:
     sdk: flutter
   intl: any
   provider: ^6.1.2
+  shared_preferences: ^2.2.3
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
